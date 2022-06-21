@@ -1,0 +1,55 @@
+:host {
+  ion-content {
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --padding-top: 16px;
+
+    .header {
+      margin: -16px -16px 0px -16px;
+
+      .header-bg {
+        height: 40px;
+        background: var(--ion-color-primary);
+      }
+
+      .header-content {
+        background: white;
+        margin: 0 16px;
+        border-radius: 10px;
+        box-shadow: 0 0 7px -2px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        transform: translateY(-50%);
+
+        .logo {
+          flex: 1;
+          text-align: center;
+
+          img {
+            height: 20px;
+          }
+        }
+      }
+    }
+
+    .profile-logo {
+      margin: 16px;
+      text-align: center;
+    }
+
+    .profile-content {
+      padding-top: 50%;
+      background: white;
+      margin: 10 16px;
+      border-radius: 10px;
+      box-shadow: 0 0 7px -2px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      transform: translateY(-5%);
+      margin-top: 15%;
+    }
+  }
+}

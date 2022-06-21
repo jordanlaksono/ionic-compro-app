@@ -1,0 +1,53 @@
+<ion-content>
+  <div class="c-top">
+    <div class="c-content"></div>
+    <div class="content">
+      <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          pullingIcon="chevron-down-circle-outline"
+          pullingText="Pull to refresh"
+          refreshingSpinner="circles"
+          refreshingText="Refreshing..."
+        >
+        </ion-refresher-content>
+      </ion-refresher>
+      <div (click)="back()">
+        <ion-icon color="primary" name="arrow-back-outline"></ion-icon>
+      </div>
+      <div class="logo">Artikel</div>
+    </div>
+  </div>
+
+  <div class="body-content ion-padding">
+    <ion-label>
+      <p>{{formatDate( artikel.tanggal_artikel)}}</p>
+      <p>Dilihat {{ artikel.artikel_dilihat}}x</p>
+    </ion-label>
+    <h2>{{ artikel.judul_artikel}}</h2>
+    <img [src]=" artikel.foto_artikel === '' ||  artikel.foto_artikel === null? 'assets/img/image.jpeg' : serverUrlAsset + artikel.foto_artikel">
+    <ion-text>
+      <p>{{ artikel.deskripsi_artikel}}</p>
+    </ion-text>
+  </div>
+
+  <h2>Komentar</h2>
+  
+  <ion-item class="comment-container" lines="none">
+    <ion-label position="stacked">Tambahkan komentar sebagai guest</ion-label>
+    <ion-textarea [(ngModel)]="deskripsiKomentar" placeholder="tulis komentar" rows="6" cols="20"></ion-textarea>
+
+    <re-captcha (resolved)="captchaResolved($event)" siteKey="6LdQ6tgZAAAAALpjlUUZPmdlEZ-jM7QLljDiouCG"></re-captcha>
+
+    <ion-button (click)="checkCaptcha()" expands="full">Kirim</ion-button>
+  </ion-item>
+
+  <ion-list>
+    <div class="card-comment ion-padding" *ngFor="let comment of comments">
+      <div class="comment-title">
+        <p>{{ comment.nama_komentar }}</p>
+        <p>{{ comment.tanggal_komentar }}</p>
+      </div>
+      <h6>{{ comment.deskripsi_komentar }}</h6>
+    </div>
+  </ion-list>
+</ion-content>

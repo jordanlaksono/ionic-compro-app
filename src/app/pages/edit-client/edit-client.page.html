@@ -1,0 +1,54 @@
+<ion-content>
+  <div class="c-top">
+    <div class="c-content"></div>
+    <div class="content">
+      <div routerLink="/tab/member">
+        <ion-icon color="primary" name="arrow-back-outline"></ion-icon>
+      </div>
+      <div class="logo">Edit Profil</div>
+    </div>
+  </div>
+
+  <div class="c-edit">
+    <div class="edit">
+
+    <div class="form-tiket">
+      <div class="client-foto">
+        <!-- <img [src]="client.foto_kta === '' || client.foto_kta === null || client.foto_kta === undefined ? '../../../assets/img/default-profile.png' : client.foto_kta" alt=""> -->
+        <img src="../../../assets/img/default-profile.png" alt="">
+      </div>
+      <div class="form">
+        <div>
+          <h6>Nama</h6>
+          <ion-input [value]="name" [(ngModel)]="name" type="text" placeholder="Nama"></ion-input>
+        </div>
+        <div>
+          <h6>Email</h6>
+          <ion-input type="email" placeholder="Email" [value]="email" [(ngModel)]="email"></ion-input>
+        </div>
+        <div>
+          <h6>Ganti Password</h6>
+          <ion-input [value]="password" [(ngModel)]="password" type="password" placeholder="Password"></ion-input>
+        </div>
+        <div>
+          <h6>Ulangi Password</h6>
+          <ion-input [value]="cPassword" [(ngModel)]="cPassword" type="password" placeholder="Password"></ion-input>
+        </div>
+        <div>
+          <h6>Foto</h6>
+          <input type="file">
+
+          <div class="alert">
+            <p style="font-weight: 700;">Peringatan</p>
+            <p>Max Dimension : 800 x 533 (px) <br>
+              Allowed Image : JPG | PNG</p>
+          </div>
+
+        </div>
+        <ion-button (click)="validation()" style="color: white;" expand="block">Submit</ion-button>
+      </div>
+    </div>
+    </div>
+  </div>
+</ion-content>
+  

@@ -1,0 +1,58 @@
+<ion-content>
+  <div class="header">
+    <div class="header-space"></div>
+    <div class="header-content">
+      <div class="logo">
+        <img src="../../../assets/img/logo.jpg" />
+      </div>
+      <div>
+          <ion-icon id="logout" name="log-out-outline" (click)="logOut()"></ion-icon>
+          <ion-icon id="login" name="log-in-outline" routerLink="/login"></ion-icon>
+      </div>
+    </div>  
+  </div>
+
+  <div class="c-banner">
+    <ion-slides pager="true" [options]="oneItemSlide" *ngIf="getSlider">
+      <ion-slide *ngFor="let data of getSlider">
+        <img [src]="serverUrlAsset + data.foto_slider" [alt]="data.id_slider" />
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+    <div style="display: block;">
+      <div class="title">
+        <b>Layanan</b>
+      </div>
+      <div class="card-container">
+        <div class="card-layanan" *ngFor="let data of getLayanan">
+          <img [src]="serverUrlAsset + data.img_layanan" [alt]="data.deskripsi_long_layanan"/>
+          <div>
+            <h6>Pengembangan Sistem Informasi (Customize)</h6>
+          </div>
+          <p>
+            Elecomp Indonesia menyediakan Jasa Pengembangan Sistem Informasi Yang Bisa di Customize Sesuai Dengan Kebutuhan Client.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  <div class="c-promo">
+    <div class="title">
+      <b>Promo</b>
+    </div>
+     <ion-slides pager="true" *ngIf="getPromo">
+      <ion-slide *ngFor="let data of getPromo">
+        <ion-card>
+          <img [src]="serverUrlAsset + data.poster_promo">
+          <ion-card-header>
+            <ion-card-subtitle>{{data.judul_promo}}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <p>{{data.deskripsi_promo}}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides> 
+  </div>
+</ion-content>

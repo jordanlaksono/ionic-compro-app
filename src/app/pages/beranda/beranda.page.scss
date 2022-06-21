@@ -1,0 +1,167 @@
+:host {
+  ion-content {
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --padding-top: 16px;
+
+    .header {
+      margin: -16px -16px 0px -16px;
+
+      .header-space {
+        height: 40px;
+        background: var(--ion-color-primary);
+      }
+
+      .header-content {
+        background: white;
+        margin: 0 16px;
+        border-radius: 10px;
+        box-shadow: 0 0 7px -2px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        transform: translateY(-50%);
+
+        .logo {
+          flex: 1;
+
+          img {
+            height: 20px;
+            padding-top: 1px;
+            padding-left: 5px;
+          }
+        }
+
+        ion-icon {
+          font-size: 16pt;
+        }
+      }
+    }
+
+    .c-banner {
+      margin: 0 -16px;
+
+      ion-slides {
+        padding-bottom: 30px;
+
+        ion-slide {
+          background: white;
+          height: 150px;
+          border-radius: 10px;
+
+          img {
+            height: auto;
+            width: auto;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+
+    .card-container {
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .card-layanan {
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 46%;
+        height: auto;
+        margin: 2%;
+        border: 1px solid gray;
+        padding: 5%;
+        border-radius: 15px;
+
+        img {
+          width: 50%;
+        }
+
+        div {
+          h6 {
+            font-size: 0.75em;
+            text-align: center;
+          }
+        }
+        p {
+          font-size: 0.75em;
+          text-align: center;
+        }
+      }
+    }
+
+    .c-promo {
+      margin: 0 -16px;
+
+      .title {
+        padding: 16px 16px 10px 16px;
+        column-width: 50%;
+      }
+
+      .card-container {
+        display: flex;
+        justify-content: center;
+
+        .card-promo {
+          width: 100%;
+          height: auto;
+          margin-bottom: 5%;
+
+          img {
+            border-radius: 15px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+          }
+
+          div {
+            border: 1px solid var(--ion-color-primary);
+            border-radius: 15px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            padding: 3%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            p {
+              font-size: 0.75em;
+            }
+          }
+        }
+      }
+
+      ion-slides {
+        ion-slide {
+          min-width: 100%;
+          img {
+            min-width: 50%;
+            border-radius: 15px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+          }
+        }
+      }
+    }
+
+    .c-layanan {
+      margin: 0 -16px;
+
+      .title {
+        padding: 16px 16px 10px 16px;
+        column-width: 50%;
+      }
+
+      ion-slides {
+        ion-slide {
+          display: flex;
+        }
+      }
+    }
+  }
+}

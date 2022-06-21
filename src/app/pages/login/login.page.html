@@ -1,0 +1,58 @@
+<ion-content>
+  <div class="header">
+    <div class="header-background"></div>
+    <div class="header-content">
+      <div routerLink="/tab/beranda">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </div>
+      <div class="title">
+        <b>Login</b>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="space"></div>
+    <form>
+      <ion-item lines="none">
+        <ion-label position="floating">Username</ion-label>
+        <ion-input
+          type="text"
+          name="username"
+          [(ngModel)]="username"
+          required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input
+          type="password"
+          name="password"
+          [(ngModel)]="password"
+          required>
+        </ion-input>
+      </ion-item>
+      
+      <!-- <ion-item class="rememberMe"> -->
+      <div class="rememberMe"> 
+        <ion-label>Remember Me</ion-label>
+        <ion-checkbox mode="ios" [(ngModel)]="isChecked" name="isChecked" color="dark"></ion-checkbox>
+      </div>
+      <!-- </ion-item> -->
+
+      <div class="space"></div>
+
+      <ion-button
+        expand="block"
+        type="submit"
+        (click)="onLogin()"
+        mode="ios"
+        color="success">
+        Sign In
+      </ion-button>
+      <!-- <div *ngIf="!isLoading">Sign In</div> -->
+    </form>
+
+  </div>
+</ion-content>
